@@ -5,7 +5,7 @@ import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
-    super(propsg);
+    super(props);
     this.state = {
       zipcode: '',
       arrData: [],
