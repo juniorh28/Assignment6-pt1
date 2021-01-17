@@ -9,3 +9,5 @@ http://ctp-zip-api.herokuapp.com/
 For this project we will be developing two simple applications,
 
 1. The first app allows us to search for City names and details for a given zip code
+
+![Screenshot of Website](https://i.imgur.com/81ATaYZ.jpg)
