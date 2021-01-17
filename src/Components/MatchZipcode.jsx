@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/zipcode.css';
 
 class MatchZipcode extends Component {
   constructor(props) {

@@ -1,16 +1,18 @@
 import './styles/app.css';
 import React, { Component } from 'react';
-import MatchZipcode from './Components/MatchZipcode';
+import MatchZipcode from './components/MatchZipcode';
 import axios from 'axios';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      zipcode: 0,
+      zipcode: '',
       arrData: [],
     };
+
     this.handleChange = this.handleChange.bind(this);
+    this.getZipCode = this.getZipCode.bind(this);
   }
 
   handleChange(e) {
@@ -19,7 +21,7 @@ class App extends Component {
     });
   }
 
-  async componentDidMount() {
+  getZipCode() {
     axios
       .get(`https://ctp-zip-api.herokuapp.com/zip/${this.state.zipcode}`)
       .then((res) => {
@@ -36,16 +38,21 @@ class App extends Component {
       <div className='App'>
         <div className='base-input'>
           <h1> Zip Code Search</h1>
-          <label name='zipcode'> Zip Code:</label>
-          <input
-            name='zipcode'
-            placeholder='Try 10016'
-            value={this.state.zipcode}
-            onChange={this.handleChange}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter') this.componentDidMount();
-            }}
-          />
+          <div id='zip-search-field'>
+            <label id='zipcode' name='zipcode'>
+              {' '}
+              Zip Code:
+            </label>
+            <input
+              name='zipcode'
+              placeholder='e.g. 10016'
+              value={this.state.zipcode}
+              onChange={this.handleChange}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') this.getZipCode();
+              }}
+            />
+          </div>
         </div>
 
         <div>
