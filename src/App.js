@@ -4,8 +4,8 @@ import MatchZipcode from './components/MatchZipcode';
 import axios from 'axios';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(propsg);
     this.state = {
       zipcode: '',
       arrData: [],
